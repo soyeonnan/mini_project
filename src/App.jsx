@@ -1,14 +1,23 @@
-import { BrowserRouter, Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
+import AppRouter from './route/AppRouter'
+import Header from './components/Header'
+
 
 
 function App() {
- 
+
 
   return (
-    <BrowserRouter>
-      <Router/>
-    </BrowserRouter>
+    <>
+  
+      <BrowserRouter>
+      <Header/>  
+      <AppRouter/>
+      </BrowserRouter>
+
+
+    </>
   )
 }
 

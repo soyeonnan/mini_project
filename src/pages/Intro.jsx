@@ -5,10 +5,14 @@ import girl from '../img/girl.jpg';
 
 import './Intro.css' //폰트 
 
+import { useNavigate } from 'react-router-dom'; // navigate로 메인으로 이동
+
 function Intro() {
+  const navigate = useNavigate();
+
   return(
     <div className='Intro'>
-      <button className="buttonStyle" onClick={()=>{}}>Start</button>
+      <button className="buttonStyle" onClick={()=>navigate('/main')}>Start</button>
       <Carousel>
       <Carousel.Item>
         <img src={man} alt="First slide" style={{width:'100%', height : '100vh'}}/>
