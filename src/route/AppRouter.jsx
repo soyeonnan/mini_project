@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import Intro from "../pages/Intro";
 import Main from "../pages/Main";
-import Routine from "../pages/Routine";
+import Routine from "../pages/Routine.jsx";
 import History from "../pages/History";
 import Start from "../pages/Start";
 import Beginner from "../pages/routine/Beginner";
 import Intermediate from "../pages/routine/Intermediate";
 import Advanced from "../pages/routine/Advanced";
+import Timer from "../pages/start/Timer";
+import Setting from "../pages/start/Setting";
 
 
 function AppRouter ( ){
@@ -14,8 +16,12 @@ function AppRouter ( ){
     <Routes>
       <Route path="/" element={<Intro/>} />
       <Route path="/main" element={<Main/>} />
-      <Route path="/start" element={<Start/>} />
       <Route path="/history" element={<History/>} />
+
+      <Route path="/start" element={<Start/>} >
+        <Route path="timer" element={<Timer/>}></Route>
+        <Route path="setting" element={<Setting/>}></Route>
+      </Route>
 
       <Route path="/routine" element={<Routine/>} >
       
