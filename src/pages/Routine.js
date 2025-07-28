@@ -3,6 +3,7 @@ export const routineTime = [
   level: '초보자',
   frequency: '주 3회 (월,수,금)',
   description: '전신 운동 (풀 바디)',
+  sets: 3, // 모든 운동 공통
   schedule: [
     {
       day: '월',
@@ -34,7 +35,7 @@ export const routineTime = [
           workTime: 60,
           note: '전신 안정화'
         }],
-      sets: '각 3세트 x 10~12회 (플랭크는 20초)',
+      
       workTime: 20,              // 운동 1세트 기준 평균 수행 시간 (초)
       restTimeBetweenSets: 60,   // 세트 사이 휴식 시간 (초)
       note: '맨몸 위주, 천천히 정확하게 수행'
@@ -43,7 +44,6 @@ export const routineTime = [
     {
   day: '수',
   part: '전신',
-  sets: 3,                    // 모든 운동 공통 3세트
   restTimeBetweenSets: 60,   // 공통 휴식 시간 (초)
   note: '균형감과 코어 자극에 집중',
   exercises: [
@@ -77,7 +77,6 @@ export const routineTime = [
    {
   day: '금',
   part: '전신',
-  sets: 3,                    // 모든 운동 공통 3세트
   restTimeBetweenSets: 60,   // 공통 휴식 시간 (초)
   note: '운동 후 스트레칭 필수, 유산소처럼 움직이기',
   exercises: [
