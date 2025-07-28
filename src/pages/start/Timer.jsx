@@ -12,7 +12,7 @@ function Timer (){
     <>
     {
       timeShow.pathname === '/start/timer' ?
-      <Time/>
+      <Time timeShow={state}/>
       :
       ''
     }
