@@ -10,12 +10,15 @@ function Timer (){
 
   return(
     <>
-    {
-      timeShow.pathname === '/start/timer' ?
-      <Time timeShow={state}/>
-      :
-      ''
-    }
+
+      
+
+      {
+        timeShow.pathname === '/start/timer' ?
+        <Time timeShow={state}/>
+        :
+        ''
+      }
       
     
     </>

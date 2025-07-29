@@ -3,11 +3,9 @@ import { useEffect, useRef, useState } from "react";
 
 
 function Time ( {timeShow} ){ //timer에 state값을 받아옴
-
+  
 
   const [today, setToday] = useState(new Date());
-
- 
 
   // 선택한 요일 저장
   const [selectedWeek, setSelectedWeek] = useState(0);
@@ -43,20 +41,22 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
     },1000)
   
 
-  setTimeout(()=>{
-    clearInterval(timer)
-    alert('종료!')
-    secRef.current = 0;  //90%앎
+    setTimeout(()=>{
+      clearInterval(timer)
+      alert('종료!')
+      secRef.current = 0;  //90%앎
 
-    if(exercisesNum < timeShow.schedule[selectedWeek].exercises.length -1)
-      setExerciseNum(exercisesNum +1)
-    else {
-      setSetNum(setNum +1) //모르겠음
-      setExerciseNum(0)
-    }
+      if(exercisesNum < timeShow.schedule[selectedWeek].exercises.length -1)
+        setExerciseNum(exercisesNum +1)
+      else {
+        setSetNum(setNum +1) //모르겠음
+        setExerciseNum(0)
+      }
 
-  }, workTime * 1000)
+    }, workTime * 1000)
 }
+
+  
 
   return(
     <>
@@ -83,6 +83,7 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
             
             return(
               <option value={i} key={i}>{sche.day}</option>
+              
              )
             })
           }
@@ -103,11 +104,41 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
         <h1>{secRef.current}</h1>
 
         {
-          setNum !== timeShow.sets +1 ?
+          setNum <= timeShow.sets  ?
 
           <div>
             <button onClick={()=>{ 
             timer(timeShow.schedule[selectedWeek].exercises[exercisesNum].workTime);
+              
+              // localStorage.setItem('startWorkTime',JSON.stringify([
+              //   { 
+              //     todayTime : todayTime,
+              //     level : timeShow.level,
+              //     name : timeShow.schedule[selectedWeek].exercises[exercisesNum].name,
+              //     workTime : timeShow.schedule[selectedWeek].exercises[exercisesNum].workTime,
+              //     sets : timeShow.schedule[selectedWeek].exercises[exercisesNum].sets,
+              //   } 
+              // ]));
+
+              let history = localStorage.getItem('startWorkTime') //로컬스토리지에 있는 데이터를 꺼내옴
+
+              history = JSON.parse(history); //문자열 형태로 넣었으니 배열로 변환
+
+              let newHistory = {
+
+                todayTime : todayTime,
+                  level : timeShow.level,
+                  name : timeShow.schedule[selectedWeek].exercises[exercisesNum].name,
+                  workTime : timeShow.schedule[selectedWeek].exercises[exercisesNum].workTime,
+                  sets : timeShow.schedule[selectedWeek].exercises[exercisesNum].sets,
+
+              }
+              history.push(newHistory);
+
+              localStorage.setItem('startWorkTime',JSON.stringify(history)); //문자열을 오브젝트로 변환해서 저장
+              
+             
+
             }}>Start!</button>
           </div>
 
@@ -119,7 +150,9 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
        
 
         </div>
+      
     </>
+    
   )
 }
 
