@@ -1,6 +1,8 @@
 function History (){
   let history = localStorage.getItem('startWorkTime');
-  history = JSON.parse(history);
+  history = history ? JSON.parse(history):[];
+
+  
   
   return(
     <>
@@ -21,19 +23,21 @@ function History (){
             </thead>
 
             <tbody>
-            {
-            history.map((his,i)=>{
+            { history.length === 0 ?
+              <tr><td>기록이 없습니다.</td></tr>
+              :
+              history.map((his,i)=>{
               
-              return(
-               
-                <tr>
-                <td>{his.todayTime}</td>
-                <td>{his.level}</td>
-                <td>{his.name}</td>
-                <td>{his.workTime}</td>
-                </tr>
+                return(
                 
-              )})
+                  <tr key={i}>
+                  <td>{his.todayTime}</td>
+                  <td>{his.level}</td>
+                  <td>{his.name}</td>
+                  <td>{his.workTime}</td>
+                  </tr>
+                  
+                )})
             }
             </tbody>
           </table>
