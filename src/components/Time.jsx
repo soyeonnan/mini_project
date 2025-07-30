@@ -26,7 +26,7 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
 
  const clear = ()=>{
   clearInterval(interval.current);
-  clearInterval(interval.current);
+  clearTimeout(interval.current);
   secRef.current=0;
  };
 

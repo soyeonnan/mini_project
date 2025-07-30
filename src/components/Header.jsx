@@ -15,6 +15,7 @@ function Header () {
             <Nav.Link onClick={()=>navigate('/routine')}>운동루틴</Nav.Link>
             <Nav.Link onClick={()=>navigate('/start')}>운동시작</Nav.Link>
             <Nav.Link onClick={()=>navigate('/history')}>운동기록</Nav.Link>
+            <Nav.Link onClick={()=>navigate('/myCalendar')}>챌린지</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

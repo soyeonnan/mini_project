@@ -9,6 +9,8 @@ import Intermediate from "../pages/routine/Intermediate";
 import Advanced from "../pages/routine/Advanced";
 import Timer from "../pages/start/Timer";
 import Setting from "../pages/start/Setting";
+import MyCalendar from "../pages/MyCalendar.jsx";
+
 
 
 function AppRouter ( ){
@@ -17,6 +19,7 @@ function AppRouter ( ){
       <Route path="/" element={<Intro/>} />
       <Route path="/main" element={<Main/>} />
       <Route path="/history" element={<History/>} />
+      <Route path="/myCalendar" element={<MyCalendar/>} />
 
       <Route path="/start" element={<Start/>} >
         <Route path="timer" element={<Timer/>}></Route>
