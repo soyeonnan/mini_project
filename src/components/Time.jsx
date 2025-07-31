@@ -21,7 +21,7 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
   const secRef = useRef(0);
 
   // 여기다가 REf을 사용해서 타이머 제거, 하나 더 뭔가 제거했음 그걸 만들어 둘거임 (왜냐면 계속 값을 저장해야되고 다른곳에서도 쓸 수 있게 변수로 뺄거임)
- const interval = useRef(); // 랜더링 하는 값을 저장
+ const interval = useRef(); 
  const timeOut = useRef(); // 타이머가 종료되면 랜더링종료,set 초기화
 
  const clear = ()=>{

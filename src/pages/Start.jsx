@@ -1,8 +1,9 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import SecondHeader from "../components/SecondHeader";
-import Button from 'react-bootstrap/Button';
 import { routineTime } from "./Routine";
 import { useEffect, useState } from "react";
+import { Stack } from "react-bootstrap";
+import { Button, Center, Flex } from "@mantine/core";
 
 function Start() {
   const routineTimeShow = useLocation();
@@ -25,30 +26,47 @@ function Start() {
   return(
     <>
       <SecondHeader show={show}/>
-
-      {
-        routineTimeShow.pathname === '/start' ? 
-        
-        routineTime.map((time,i)=>{
+      
+        <Flex 
+                
+          className={`d-grid `}
+          mt={100}
+          h="50vh"
+          mih={50}
+          gap="xs"
+          justify="center"
+          align="center"
+          direction="column"
+          wrap="wrap"
+          >
+            
+        {
+          routineTimeShow.pathname === '/start' ? 
           
-          return (
-            <div className={`d-grid gap-${i}`} key={i}>
-            <Button variant="primary" size="lg" onClick={()=> {
+          routineTime.map((time,i)=>{
+            
+            return (
+            
+                
 
-              navigate('/start/timer', {state : time})
-            }}>
-              {time.level}
+                  <Button variant="filled" color="orange" size="xl" radius="lg" w={300} onClick={()=> {
+
+                    navigate('/start/timer', {state : time})
+                    }}>
+                    {time.level}
+                    
+                  </Button>
+
               
-            </Button>
-          </div>
-          )
-        })
-        
-        :
-        ''
-      }
+            )
+          })
+          
+          :
+          ''
+        }
 
 
+        </Flex>
 
       <Outlet/>
     </>
