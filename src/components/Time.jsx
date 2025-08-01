@@ -1,4 +1,5 @@
 import { current } from "@reduxjs/toolkit";
+import dayjs from "dayjs";
 import { useEffect, useRef, useState } from "react";
 
 
@@ -42,8 +43,7 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
     return () => clearInterval(time); //하나도 모름 -> 다른 페이지로 나갔을 때 진행이 되지 않게끔 클리어작업
   },[]);
 
-  const todayTime = `${today.getFullYear()}년 ${today.getMonth()+1}월 ${today.getDate()}일 
-  ${today.getHours()}: ${today.getMinutes()}: ${today.getSeconds()}`; //절반만 앎
+  const todayTime = `${today.getFullYear()}년 ${today.getMonth()+1}월 ${today.getDate()}일 ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`; //절반만 앎
 
 
   const timer = (workTime) => {
@@ -121,6 +121,7 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
   
                     localStorage.setItem('startWorkTime',JSON.stringify([
                       { 
+                        history : dayjs(),
                         todayTime : todayTime,
                         level : timeShow.level,
                         name : timeShow.schedule[selectedWeek].exercises[exercisesNum].name,
@@ -135,6 +136,7 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
     
                   let newHistory = {
     
+                    history : dayjs(),
                     todayTime : todayTime,
                       level : timeShow.level,
                       name : timeShow.schedule[selectedWeek].exercises[exercisesNum].name,
