@@ -1,0 +1,85 @@
+body{
+    background-color: rgb(49, 52, 51);
+}
+
+.total>div{
+    background-position: center;
+    /* 배경 꽉차게 */
+    background-size: cover; 
+    height: 300px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    /* 세로 정렬 */
+    margin-top: 30px;
+    padding: 0 40px;
+    /* 위아래0 좌우40px */
+    
+}
+
+.total>div>h1{
+    font-size: 40px;
+    color: rgb(7, 7, 7);
+    letter-spacing: 0.2em;
+    /* 글자 간격 조절 */
+    margin-bottom: 0;
+    background-color: rgba(252, 248, 248, 0.3);
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.total>div>p{
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: rgb(11, 10, 10);
+
+}
+
+.total >div>div{
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.total>div>button{
+    
+    color: aliceblue;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 7px 50px;
+    font-size: 14px;
+    transition: .5s ease;
+    
+}
+
+.title1{
+    background: url(../img/title1.jpg);
+    align-items: flex-end;      
+    text-align: right;
+
+}
+
+.title2{
+    background: url(../img/title2.jpg);
+    align-items: flex-start;    /* 왼쪽 정렬 */
+    text-align: left;
+}
+
+.title3{
+    background: url(../img/title3.jpg);
+    align-items: flex-end;    /* 왼쪽 정렬 */
+    text-align: right;
+}
+
+.title4{
+    background: url(../img/title4.jpg);
+    align-items: flex-start;    /* 왼쪽 정렬 */
+    text-align: left;
+}
+

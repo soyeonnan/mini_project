@@ -58,7 +58,7 @@ function Routine(){
 
         <Group justify="space-between" mt="md" mb="xs">
          <Text fw={500}>처음 시작하는 당신을 위한 루틴</Text>
-         <Badge color="pink">초보</Badge>
+         <Badge color="green.6">초보</Badge>
         </Group>
 
         <Text size="sm" c="dimmed">
@@ -67,11 +67,11 @@ function Routine(){
           내 몸의 변화를 느껴보세요.
         </Text>  
 
-        <Group justify="center" gap="sm" grow>
-          <Button color="blue" size="md"  radius="md" >
+        <Group justify="center" gap="sm" grow style={{marginTop:20}}>
+          <Button color="red" size="md"  radius="md"  variant="outline">
             초보자 루틴
           </Button>
-          <Button color="" size="md"  radius="md">
+          <Button color="red" size="md"  radius="md" variant="outline">
             바로 시작!
           </Button>
         </Group>
@@ -88,7 +88,7 @@ function Routine(){
 
         <Group justify="space-between" mt="md" mb="xs">
          <Text fw={500}>더 단단해지고 싶은 당신을 위해</Text>
-         <Badge color="pink">중급</Badge>
+         <Badge color="blue.6">중급</Badge>
         </Group>
 
         <Text size="sm" c="dimmed">
@@ -96,11 +96,11 @@ function Routine(){
           다양한 부위 운동으로 전신을 강화하세요.
         </Text>  
 
-        <Group justify="center" gap="sm" grow>
-          <Button color="blue" size="md"  radius="md" >
+        <Group justify="center" gap="sm" grow style={{marginTop:20}}>
+          <Button color="red" size="md"  radius="md" variant="outline">
             중급자 루틴
           </Button>
-          <Button color="" size="md"  radius="md">
+          <Button color="red" size="md"  radius="md" variant="outline">
             바로 시작!
           </Button>
         </Group>
@@ -117,7 +117,7 @@ function Routine(){
 
         <Group justify="space-between" mt="md" mb="xs">
          <Text fw={500}>한계에 도전하는 하드 트레이닝</Text>
-         <Badge color="pink">고급</Badge>
+         <Badge color="red.9">고급</Badge>
         </Group>
 
         <Text size="sm" c="dimmed">
@@ -125,11 +125,11 @@ function Routine(){
           지치지 않는 체력과 완벽한 컨디션을 목표로!
         </Text>  
 
-        <Group justify="center" gap="sm" grow>
-          <Button color="blue" size="md"  radius="md" >
+        <Group justify="center" gap="sm" grow style={{marginTop:20}}>
+          <Button color="red" size="md"  radius="md" variant="outline">
             고급자 루틴
           </Button>
-          <Button color="" size="md"  radius="md">
+          <Button color="red" size="md"  radius="md" variant="outline">
             바로 시작!
           </Button>
         </Group>

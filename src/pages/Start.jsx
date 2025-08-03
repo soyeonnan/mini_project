@@ -4,6 +4,7 @@ import { routineTime } from "./Routine";
 import { useEffect, useState } from "react";
 import { Stack } from "react-bootstrap";
 import { Button, Center, Flex } from "@mantine/core";
+import './Start.css';
 
 function Start() {
   const routineTimeShow = useLocation();
