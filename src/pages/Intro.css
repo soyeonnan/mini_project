@@ -1,5 +1,6 @@
 
 .Intro {
+  position: relative;
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -13,17 +14,60 @@
 }
 
 .Intro >.buttonStyle{
-  border-style: none;
+  transform: translateX(-50%);
   position: absolute;
-  right: 38%;
-  bottom: 8px;
+  left: 50%;
+  bottom: 50px;
   z-index: 99;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  border-radius: 10px;
-  background-color: red;
+  padding: 0px 50px;
+  font-size: 20px;
+}
 
-  color: white;
+.carousel-caption{
+  color: rgb(255, 255, 255);
+  position: absolute;
+}
+
+.slider1 .carousel-caption {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-60%);
+  align-items: flex-end;
+  height: 100%;
+  justify-content: center;
+}
+
+.slider2 .carousel-caption {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-20%);
+  align-items: flex-end;
+  height: 100%;
+  justify-content: center;
+}
+
+.slider3 .carousel-caption {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  align-items: flex-start;
+  height: 100%;
+  justify-content: center;
+}
+
+h3{
+  font-size: 50px;
+}
+
+P{
+  font-size: 20PX;
 }
