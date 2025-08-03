@@ -48,7 +48,7 @@ function MyCalendar() {
         const year = dayjs(date).year();
         return (
           
-          <Indicator size={6} color="red" offset={-2} disabled={!historyDay.includes(`${year}-${month}-${day}`)}>
+          <Indicator size={6} color="green" offset={-2} disabled={!historyDay.includes(`${year}-${month}-${day}`)}>
             <div>{day}</div>
           </Indicator>
         );
