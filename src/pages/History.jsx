@@ -1,3 +1,5 @@
+import './History.css'
+
 function History (){
   let history = localStorage.getItem('startWorkTime');
   history = history ? JSON.parse(history):[];

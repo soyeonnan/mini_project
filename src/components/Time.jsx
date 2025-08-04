@@ -1,6 +1,7 @@
 import { current } from "@reduxjs/toolkit";
 import dayjs from "dayjs";
 import { useEffect, useRef, useState } from "react";
+import './Time.css'
 
 
 
@@ -78,7 +79,7 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
   return(
     <>
      <div>
-      <div>{todayTime}</div>
+      <div className="time">{todayTime}</div>
 
         <div>
           <label> 레벨  :</label> 
