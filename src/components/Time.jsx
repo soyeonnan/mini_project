@@ -66,6 +66,7 @@ function Time ( {timeShow} ){ //timer에 state값을 받아옴
         setSetNum(setNum +1) //모르겠음
         setExerciseNum(0)
       }
+      
 
   },workTime*1000);
   }
