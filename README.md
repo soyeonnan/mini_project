@@ -1,37 +1,54 @@
-# React + Vite
+# 💪 Health & Exercise Tracker (Solo Project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+서버 없이 브라우저 환경에서 동작하는 **개인 맞춤형 운동 루틴 관리 및 타이머 웹 애플리케이션**입니다.  
+복잡한 설정 없이 바로 운동 기록을 남기고 싶어 하는 니즈를 반영하여, **localStorage**를 활용한 데이터 영속성을 구현했습니다.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
+| Category | Technologies |
+|----------|--------------|
+| **Frontend** | React, Redux Toolkit |
+| **UI Library** | Mantine UI (@mantine/core, @mantine/dates) |
+| **Storage** | LocalStorage (Browser API) |
+| **Deployment** | Vercel / GitHub Pages |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+### 1. Routine Management (루틴 관리)
+- 나만의 운동 루틴 생성, 수정, 삭제
+- 운동 항목(세트, 무게, 횟수) 디테일 설정
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Workout Mode & Timer (운동 모드 & 타이머)
+- 실전 운동 모드 진입 시 타이머 자동 실행
+- 세트 간 휴식 시간(Rest Timer) 카운트다운 제공
+- 운동 완료 후 성취감 고취를 위한 완료 페이지
 
-기능
-- 루틴 추가/ 삭제
-- 기록 등록 / 확인
-- 루틴 기반 타이머 실행
-- 데이터 저장(초반엔 로컬스토리지)
+### 3. Calendar & History (캘린더 & 기록)
+- **Mantine Dates**를 활용한 직관적인 캘린더 UI
+- 날짜별 운동 수행 여부 및 상세 기록(History) 확인 기능
+- 운동 빈도를 시각적으로 보여주는 스트릭(Streak) 유사 UI
 
-부트스트랩,스타일컴포넌트,리액트라우터,엑시오스,리듁스 인스톨함
+## 💻 My Contributions (Frontend Solo)
+**Role: Sole Developer**
 
--부트스트랩
-웹사이트나 웹앱을 빠르게, 일관성 있게 디자인할 수 있도록 도와주는 UI 컴포넌트 프레임워크
+### Client-Side Architecture
+- **No-Server Approach**: 별도의 백엔드 없이 `localStorage`를 DB처럼 활용하는 아키텍처 설계.
+- **Redux Toolkit**: 전역 상태 관리를 통해 복잡한 타이머 상태와 루틴 데이터를 효율적으로 관리.
 
--스타일 컴포넌트
- React에서 CSS를 더 효율적으로 다룰 수 있게 해주는 CSS-in-JS 라이브러리
+### UI/UX Engineering
+- **Mantine UI Customization**: 기본 컴포넌트를 커스터마이징하여 다크 모드 기반의 세련된 "Gym App" 테마 구축.
+- **Responsive Design**: 모바일에서도 운동 중에 쉽게 터치할 수 있도록 버튼 크기 및 레이아웃 최적화.
 
--리액트라우터
-React 앱에서 여러 페이지처럼 보이게 해주는 라이브러리
+## 📂 Project Structure
+```
+src
+├── behaviors  # Redux Slices (store)
+├── components # Reusable UI Components
+├── pages      # Routing Pages (Home, Routine, History)
+├── theme      # Mantine Theme configurations
+└── utils      # LocalStorage Helpers
+```
 
--엑시오스
-브라우저나 Node.js에서 HTTP 요청을 보낼 수 있게 도와주는 자바스크립트 라이브러리
-서버랑 통신(요청/응답)할 때 사용하는 도구
-
--리듁스
-React 앱의 전역 상태(state)를 관리하는 라이브러리
-모든 컴포넌트가 공유하는 '중앙 상태 저장소(Store)'를 만들어주는 도구
+## 💡 Troubleshooting & Insights
+- **문제**: 브라우저 새로고침 시 타이머나 진행 중인 운동 상태가 초기화되는 문제.
+- **해결**: Redux-Persist 또는 LocalStorage 수동 동기화를 통해, 앱이 다시 로드되어도 이전 상태(진행 중이던 세트 등)를 복구하도록 로직 개선.
+- **배운점**: 서버가 없는 환경에서의 **클라이언트 측 데이터 모델링(Data Modeling)**과 **상태 보존 전략**에 대해 심도 있게 고민하고 구현해볼 수 있었습니다.
